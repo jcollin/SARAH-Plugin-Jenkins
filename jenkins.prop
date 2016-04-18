@@ -1,0 +1,13 @@
+{
+  "modules" : { 
+    "jenkins"  : {
+      "description": "Permet de piloter jenkins",
+      "version" : "1.0",
+	  "protocol" : "http://",
+	  "domain": "127.0.0.1",
+	  "port" : "8081",
+	  "login" : "jamesbond",
+	  "password" : "iLoveM"
+    }
+  }
+}

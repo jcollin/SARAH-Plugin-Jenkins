@@ -1,0 +1,67 @@
+﻿<html>
+<head>
+<title>Plugin Jenkins pour S.A.R.A.H</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+</head>
+<body>
+<h1>Documentation Plugin Jenkins pour SARAH</h1>
+
+<br>
+auteur : Julien COLLIN<br>
+date : 17/04/2016<br>
+version : 1.0<br>
+<p><a href="https://jenkins.io/">https://jenkins.io/</a></p>
+<p>Plugin réalisé à partir de l'API de Jenkins, testé sur une version 1.581 de Jenkins</p>
+
+ <ol>
+ <li>CONFIGURATION</li>
+ <li>FONCTIONNEMENT ET ACTIONS</li>
+ <li>LE FICHIER JENKINS.XML</li>
+ <li>CHANGELOG</li>
+ <li>REMERCIEMENTS</li>
+ </ol>
+
+<h2>1. CONFIGURATION </h2>
+<p>
+Le fichier jenkins.prop permet de paramétrer les informations nécessaires au bon fonctionnement du plugin.<br>
+Il est donc indispensable de renseigner ces 5 éléments :</p>
+<ul>
+<li><b>protocol</b> : <em>http://</em> ou <em>https://</em> Correspond au protocol à utiliser pour accèder à l'URL de votre Jenkins</li>
+<li><b>domain</b> : <em>www.monjenkins.fr</em> ou <em>127.0.0.1/jenkins</em> ... Domaine ou Ip pour accèder à votre Jenkins</li>
+<li><b>domain</b> : <em>www.monjenkins.fr</em> ou <em>127.0.0.1/jenkins</em> ... Domaine ou Ip pour accèder à votre Jenkins</li>
+<li><b>port</b> : <em>80</em> ou <em>8080</em> ... Port utilisé pour accèder à votre Jenkins</li>
+<li><b>login</b> : <em>jamesbond</em> Votre login pour accèder à votre jenkins</li>
+<li><b>password</b> : <em>iLoveM</em> Votre password pour accèder à votre Jenkins</li>
+</ul>
+
+<h2>2. FONCTIONNEMENT ET ACTIONS</h2>
+
+<p> Il est possible de demander 2 actions à SARAH pour ce plugin :
+<ul>
+<li>SARAH, lance le Job XXXXXX : SARAH va se connecter à jenkins pour lancer un build. Elle va ensuite scruter fréquement la queue jenkins puis le build une fois lancé jusqu'à que le build soit terminé.
+Elle donnera à la fin le résultat du build</li>
+<li>SARAH, quel est le statut du job XXXXXX : SARAH va se connecter sur le job pour voir ce qu'il en est. Elle va déjà donné la tendance (correspond à la bille bleu, jaune ou rouge). Ensuite, elle donnera le numéro
+du dernier build ainsi que le numéro du dernier build réussi</li>
+</ul>
+
+<h2>3. LE FICHIER JENKINS.XML</h2>
+<p>
+C'est dans ce fichier que nous allons définir notre grammaire et les actions à effectuer. Voici les 3 paramètres nous intéressent :
+</p>
+<ul>
+<li><b>module</b> : Action à effectuer (valeur possible : build, info). Uniquement dans le cas d'une action sur un périphérique.</li>	
+<li><b>job</b> : Chaîne de texte qui identifie le job sur Jenkins, généralement les XXXXXXXXX dans http://monipjenkins/job/XXXXXXXXX/. Cela correspond au endpoint de l'API du job</li>
+<li><b>name</b> : Chaîne de texte contenant le texte tts correspondant au nom du job que l'on souhaite voir prononcer par SARAH.</li>
+</ul>
+<h2>4. CHANGELOG</h2>
+<p>
+<b>version 1.0 (17/04/2016)</b></p>
+<ul>
+    <li>Possibilité de lancer un build pour un job</li>
+    <li>Possibilité de connaître le statut d'un job
+</ul>
+<h2>5. REMERCIEMENTS</h2>
+<p>
+Jean-Philippe ENCAUSSE Pour SARAH</p>
+</body>
+</html>

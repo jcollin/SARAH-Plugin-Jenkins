@@ -1,0 +1,21 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="rulejenkins" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+ <rule id="rulejenkins" scope="public">
+  	<example>Sarah lance le job XXXX</example>
+  	<tag>out.action=new Object(); </tag>
+
+  	<item>Sarah</item>
+
+     
+	  <one-of>
+		<item>lance le job<tag>out.action.module = 'build';</tag></item>
+		<item>quel est le statut du job<tag>out.action.module = 'info';</tag></item>
+	  </one-of>
+
+	  <one-of>
+       <item>Qualité<tag>out.action.job = 'QUALITY';out.action.name = 'Qualité';</tag></item>
+	  </one-of>
+
+    
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/jenkins";</tag>
+  </rule>
+</grammar>

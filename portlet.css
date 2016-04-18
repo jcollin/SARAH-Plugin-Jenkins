@@ -1,0 +1,10 @@
+
+.plugin-gridster.jenkins .front {
+  background: #fff url('images/226px-Jenkins_logo.svg.png') center 34px;
+  background-size:   82px 91px;
+  background-repeat: no-repeat;
+}
+
+.plugin-gridster.jenkins .back {
+  background: #fff;
+}
